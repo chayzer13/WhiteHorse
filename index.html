@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>White Horse Stone — Тротуарная плитка и бордюры</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header" id="header">
+        <div class="container header__inner">
+            <a href="#" class="logo">
+                <span class="logo__icon">◆</span>
+                <span class="logo__text">White Horse Stone</span>
+            </a>
+            <nav class="nav" id="nav">
+                <a href="#catalog" class="nav__link">Каталог</a>
+                <a href="#calculator" class="nav__link">Расчёт</a>
+                <a href="#services" class="nav__link">Услуги</a>
+                <a href="#reviews" class="nav__link">Отзывы</a>
+                <a href="#faq" class="nav__link">FAQ</a>
+                <a href="#contacts" class="nav__link">Контакты</a>
+            </nav>
+            <button class="burger" id="burger" aria-label="Меню">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero">
+        <div class="container hero__inner">
+            <div class="hero__content">
+                <p class="hero__tag">Производство тротуарной плитки</p>
+                <h1 class="hero__title">Надёжная плитка <br>для вашего пространства</h1>
+                <p class="hero__desc">Производим брусчатку и бордюры высочайшего качества. Собственное производство, честные цены и гарантия долговечности на десятилетия.</p>
+                <div class="hero__actions">
+                    <a href="#catalog" class="btn btn--primary">Смотреть каталог</a>
+                    <a href="#calculator" class="btn btn--outline">Рассчитать стоимость</a>
+                </div>
+            </div>
+            <div class="hero__visual">
+                <div class="hero__pattern">
+                    <div class="hero__pattern-grid">
+                        <div class="tile t1"></div><div class="tile t2"></div><div class="tile t3"></div><div class="tile t4"></div>
+                        <div class="tile t5"></div><div class="tile t6"></div><div class="tile t7"></div><div class="tile t8"></div>
+                        <div class="tile t9"></div><div class="tile t10"></div><div class="tile t11"></div><div class="tile t12"></div>
+                        <div class="tile t13"></div><div class="tile t14"></div><div class="tile t15"></div><div class="tile t16"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero__stats">
+            <div class="container hero__stats-inner">
+                <div class="stat">
+                    <span class="stat__number">12+</span>
+                    <span class="stat__label">лет на рынке</span>
+                </div>
+                <div class="stat">
+                    <span class="stat__number">500K</span>
+                    <span class="stat__label">м² уложено</span>
+                </div>
+                <div class="stat">
+                    <span class="stat__number">50+</span>
+                    <span class="stat__label">видов продукции</span>
+                </div>
+                <div class="stat">
+                    <span class="stat__number">1200+</span>
+                    <span class="stat__label">довольных клиентов</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== POPULAR PRODUCTS ===== -->
+    <section class="section popular" id="popular">
+        <div class="container">
+            <div class="section__header">
+                <p class="section__tag">Хиты продаж</p>
+                <h2 class="section__title">Популярные товары</h2>
+                <p class="section__desc">Самые востребованные позиции нашего каталога, проверенные временем и тысячами клиентов</p>
+            </div>
+            <div class="popular__grid">
+                <div class="product-card">
+                    <div class="product-card__img" style="background-color: #c4a882;">
+                        <span class="product-card__badge">Хит</span>
+                        <div class="product-card__tile-preview tile-preview--brick"></div>
+                    </div>
+                    <div class="product-card__body">
+                        <h3 class="product-card__name">Классическая брусчатка</h3>
+                        <p class="product-card__info">200×100×60 мм · Серый</p>
+                        <div class="product-card__footer">
+                            <span class="product-card__price">от 850 ₽/м²</span>
+                            <a href="#calculator" class="product-card__btn">Рассчитать</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-card__img" style="background-color: #b8967a;">
+                        <span class="product-card__badge">Новинка</span>
+                        <div class="product-card__tile-preview tile-preview--wave"></div>
+                    </div>
+                    <div class="product-card__body">
+                        <h3 class="product-card__name">Брусчатка «Волна»</h3>
+                        <p class="product-card__info">240×120×70 мм · Терракот</p>
+                        <div class="product-card__footer">
+                            <span class="product-card__price">от 1 050 ₽/м²</span>
+                            <a href="#calculator" class="product-card__btn">Рассчитать</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-card__img" style="background-color: #a0a0a0;">
+                        <div class="product-card__tile-preview tile-preview--hex"></div>
+                    </div>
+                    <div class="product-card__body">
+                        <h3 class="product-card__name">Брусчатка «Соты»</h3>
+                        <p class="product-card__info">Ø250×60 мм · Графит</p>
+                        <div class="product-card__footer">
+                            <span class="product-card__price">от 1 200 ₽/м²</span>
+                            <a href="#calculator" class="product-card__btn">Рассчитать</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-card__img" style="background-color: #8a9a8a;">
+                        <span class="product-card__badge">Популярное</span>
+                        <div class="product-card__tile-preview tile-preview--border"></div>
+                    </div>
+                    <div class="product-card__body">
+                        <h3 class="product-card__name">Бордюр садовый</h3>
+                        <p class="product-card__info">500×200×45 мм · Серый</p>
+                        <div class="product-card__footer">
+                            <span class="product-card__price">от 180 ₽/шт</span>
+                            <a href="#calculator" class="product-card__btn">Рассчитать</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CALCULATOR ===== -->
+    <section class="section calculator" id="calculator">
+        <div class="container">
+            <div class="section__header">
+                <p class="section__tag">Онлайн-калькулятор</p>
+                <h2 class="section__title">Предварительный расчёт стоимости</h2>
+                <p class="section__desc">Узнайте примерную стоимость материалов для вашего проекта за пару кликов</p>
+            </div>
+            <div class="calc">
+                <div class="calc__form">
+                    <div class="calc__group">
+                        <label class="calc__label">Тип продукции</label>
+                        <div class="calc__radio-group">
+                            <label class="calc__radio">
+                                <input type="radio" name="productType" value="paving" checked>
+                                <span>Брусчатка</span>
+                            </label>
+                            <label class="calc__radio">
+                                <input type="radio" name="productType" value="border">
+                                <span>Бордюры</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="calc__group" id="calcPavingType">
+                        <label class="calc__label">Вид брусчатки</label>
+                        <select class="calc__select" id="pavingSelect">
+                            <option value="850">Классическая (от 850 ₽/м²)</option>
+                            <option value="1050">Волна (от 1 050 ₽/м²)</option>
+                            <option value="1200">Соты (от 1 200 ₽/м²)</option>
+                            <option value="950">Старый город (от 950 ₽/м²)</option>
+                            <option value="1100">Кирпич (от 1 100 ₽/м²)</option>
+                        </select>
+                    </div>
+
+                    <div class="calc__group hidden" id="calcBorderType">
+                        <label class="calc__label">Вид бордюра</label>
+                        <select class="calc__select" id="borderSelect">
+                            <option value="180">Садовый (от 180 ₽/шт)</option>
+                            <option value="350">Дорожный (от 350 ₽/шт)</option>
+                            <option value="250">Декоративный (от 250 ₽/шт)</option>
+                        </select>
+                    </div>
+
+                    <div class="calc__group" id="calcArea">
+                        <label class="calc__label" id="calcAreaLabel">Площадь (м²)</label>
+                        <input type="number" class="calc__input" id="calcAreaInput" min="1" placeholder="Введите площадь" value="50">
+                    </div>
+
+                    <button class="btn btn--primary calc__btn" id="calcBtn">Рассчитать стоимость</button>
+                </div>
+
+                <div class="calc__result" id="calcResult">
+                    <div class="calc__result-icon">📐</div>
+                    <p class="calc__result-label">Предварительная стоимость</p>
+                    <p class="calc__result-value" id="calcValue">—</p>
+                    <p class="calc__result-note">* Окончательная цена может отличаться. Свяжитесь с нами для точного расчёта.</p>
+                    <a href="#contacts" class="btn btn--outline calc__result-btn">Получить точный расчёт</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CATALOG ===== -->
+    <section class="section catalog" id="catalog">
+        <div class="container">
+            <div class="section__header">
+                <p class="section__tag">Наша продукция</p>
+                <h2 class="section__title">Каталог</h2>
+                <p class="section__desc">Два направления — одно качество. Выберите категорию для просмотра</p>
+            </div>
+
+            <div class="catalog__tabs">
+                <button class="catalog__tab active" data-tab="paving">Брусчатка</button>
+                <button class="catalog__tab" data-tab="borders">Бордюры</button>
+            </div>
+
+            <!-- Брусчатка -->
+            <div class="catalog__content active" id="tab-paving">
+                <div class="catalog__grid">
+                    <div class="catalog-card">
+                        <div class="catalog-card__img" style="background: linear-gradient(135deg, #d4c4a8, #bfae8e);">
+                            <div class="catalog-card__tile-demo tile-demo--classic"></div>
+                        </div>
+                        <h3 class="catalog-card__name">Классическая</h3>
+                        <p class="catalog-card__desc">Универсальная брусчатка для дорожек, площадок и парковок</p>
+                        <p class="catalog-card__specs">200×100×60 мм</p>
+                        <p class="catalog-card__colors">Цвета: серый, красный, коричневый, чёрный</p>
+                        <p class="catalog-card__price">от 850 ₽/м²</p>
+                    </div>
+                    <div class="catalog-card">
+                        <div class="catalog-card__img" style="background: linear-gradient(135deg, #c9a882, #b89572);">
+                            <div class="catalog-card__tile-demo tile-demo--wave"></div>
+                        </div>
+                        <h3 class="catalog-card__name">Волна</h3>
+                        <p class="catalog-card__desc">Фигурная брусчатка с волнистым краем для сцепления</p>
+                        <p class="catalog-card__specs">240×120×70 мм</p>
+                        <p class="catalog-card__colors">Цвета: терракот, песочный, серый</p>
+                        <p class="catalog-card__price">от 1 050 ₽/м²</p>
+                    </div>
+                    <div class="catalog-card">
+                        <div class="catalog-card__img" style="background: linear-gradient(135deg, #9a9a9a, #7a7a7a);">
+                            <div class="catalog-card__tile-demo tile-demo--hex"></div>
+                        </div>
+                        <h3 class="catalog-card__name">Соты</h3>
+                        <p class="catalog-card__desc">Шестигранная плитка для декоративного мощения</p>
+                        <p class="catalog-card__specs">Ø250×60 мм</p>
+                        <p class="catalog-card__colors">Цвета: графит, белый, терракот</p>
+                        <p class="catalog-card__price">от 1 200 ₽/м²</p>
+                    </div>
+                    <div class="catalog-card">
+                        <div class="catalog-card__img" style="background: linear-gradient(135deg, #b8a89a, #a08878);">
+                            <div class="catalog-card__tile-demo tile-demo--oldtown"></div>
+                        </div>
+                        <h3 class="catalog-card__name">Старый город</h3>
+                        <p class="catalog-card__desc">Набор из элементов разных размеров для уникальной кладки</p>
+                        <p class="catalog-card__specs">Набор: 3 размера</p>
+                        <p class="catalog-card__colors">Цвета: микс, серый, коричневый</p>
+                        <p class="catalog-card__price">от 950 ₽/м²</p>
+                    </div>
+                    <div class="catalog-card">
+                        <div class="catalog-card__img" style="background: linear-gradient(135deg, #c4b498, #a89878);">
+                            <div class="catalog-card__tile-demo tile-demo--brick"></div>
+                        </div>
+                        <h3 class="catalog-card__name">Кирпич</h3>
+                        <p class="catalog-card__desc">Классическая кирпичная кладка для тротуаров и площадей</p>
+                        <p class="catalog-card__specs">200×100×80 мм</p>
+                        <p class="catalog-card__colors">Цвета: красный, серый, охра</p>
+                        <p class="catalog-card__price">от 1 100 ₽/м²</p>
+                    </div>
+                    <div class="catalog-card">
+                        <div class="catalog-card__img" style="background: linear-gradient(135deg, #a0b0a0, #8a9a8a);">
+                            <div class="catalog-card__tile-demo tile-demo--square"></div>
+                        </div>
+                        <h3 class="catalog-card__name">Квадрат</h3>
+                        <p class="catalog-card__desc">Крупноформатная плитка для быстрой укладки больших площадей</p>
+                        <p class="catalog-card__specs">300×300×60 мм</p>
+                        <p class="catalog-card__colors">Цвета: серый, бежевый, антрацит</p>
+                        <p class="catalog-card__price">от 780 ₽/м²</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Бордюры -->
+            <div class="catalog__content" id="tab-borders">
+                <div class="catalog__grid">
+                    <div class="catalog-card">
+                        <div class="catalog-card__img" style="background: linear-gradient(135deg, #b0b0b0, #909090);">
+                            <div class="catalog-card__tile-demo tile-demo--border-garden"></div>
+                        </div>
+                        <h3 class="catalog-card__name">Садовый</h3>
+                        <p class="catalog-card__desc">Лёгкий бордюр для садовых дорожек и клумб</p>
+                        <p class="catalog-card__specs">500×200×45 мм</p>
+                        <p class="catalog-card__colors">Цвета: серый, красный, коричневый</p>
+                        <p class="catalog-card__price">от 180 ₽/шт</p>
+                    </div>
+                    <div class="catalog-card">
+                        <div class="catalog-card__img" style="background: linear-gradient(135deg, #8a8a8a, #6a6a6a);">
+                            <div class="catalog-card__tile-demo tile-demo--border-road"></div>
+                        </div>
+                        <h3 class="catalog-card__name">Дорожный</h3>
+                        <p class="catalog-card__desc">Усиленный бордюр для проезжих частей и парковок</p>
+                        <p class="catalog-card__specs">1000×300×150 мм</p>
+                        <p class="catalog-card__colors">Цвета: серый, чёрный</p>
+                        <p class="catalog-card__price">от 350 ₽/шт</p>
+                    </div>
+                    <div class="catalog-card">
+                        <div class="catalog-card__img" style="background: linear-gradient(135deg, #c8b898, #a89878);">
+                            <div class="catalog-card__tile-demo tile-demo--border-deco"></div>
+                        </div>
+                        <h3 class="catalog-card__name">Декоративный</h3>
+                        <p class="catalog-card__desc">Фигурный бордюр с рельефным орнаментом</p>
+                        <p class="catalog-card__specs">500×250×50 мм</p>
+                        <p class="catalog-card__colors">Цвета: песочный, терракот, серый</p>
+                        <p class="catalog-card__price">от 250 ₽/шт</p>
+                    </div>
+                    <div class="catalog-card">
+                        <div class="catalog-card__img" style="background: linear-gradient(135deg, #a0a898, #889088);">
+                            <div class="catalog-card__tile-demo tile-demo--border-lawn"></div>
+                        </div>
+                        <h3 class="catalog-card__name">Газонный</h3>
+                        <p class="catalog-card__desc">Низкий бордюр для отделения газонов от мощёных зон</p>
+                        <p class="catalog-card__specs">500×100×30 мм</p>
+                        <p class="catalog-card__colors">Цвета: зелёный, серый</p>
+                        <p class="catalog-card__price">от 120 ₽/шт</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
+    <section class="section services" id="services">
+        <div class="container">
+            <div class="section__header">
+                <p class="section__tag">Что мы предлагаем</p>
+                <h2 class="section__title">Наши услуги</h2>
+                <p class="section__desc">Полный цикл — от производства до укладки «под ключ»</p>
+            </div>
+            <div class="services__grid">
+                <div class="service-card">
+                    <div class="service-card__icon">🏭</div>
+                    <h3 class="service-card__title">Производство</h3>
+                    <p class="service-card__desc">Собственный завод с современным оборудованием. Контроль качества на каждом этапе, соответствие ГОСТам.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card__icon">🚚</div>
+                    <h3 class="service-card__title">Доставка</h3>
+                    <p class="service-card__desc">Доставка по городу и области собственным транспортом. Бережная разгрузка манипулятором.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card__icon">📐</div>
+                    <h3 class="service-card__title">Замер и проект</h3>
+                    <p class="service-card__desc">Бесплатный выезд замерщика. Составление схемы раскладки и точный расчёт материалов.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card__icon">🔨</div>
+                    <h3 class="service-card__title">Укладка</h3>
+                    <p class="service-card__desc">Профессиональный монтаж с подготовкой основания. Гарантия на работы — 3 года.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card__icon">🎨</div>
+                    <h3 class="service-card__title">Индивидуальный дизайн</h3>
+                    <p class="service-card__desc">Изготовление плитки по вашему эскизу: нестандартные формы, цвета и размеры.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card__icon">🔧</div>
+                    <h3 class="service-card__title">Гарантия и сервис</h3>
+                    <p class="service-card__desc">Гарантия на продукцию до 25 лет. Бесплатная замена при обнаружении дефекта.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== REVIEWS ===== -->
+    <section class="section reviews" id="reviews">
+        <div class="container">
+            <div class="section__header">
+                <p class="section__tag">Что говорят клиенты</p>
+                <h2 class="section__title">Отзывы</h2>
+                <p class="section__desc">Нам доверяют сотни клиентов — вот что они говорят</p>
+            </div>
+
+            <div class="reviews__slider" id="reviewsSlider">
+                <div class="reviews__track" id="reviewsTrack">
+                    <!-- Предустановленные отзывы -->
+                    <div class="review-card">
+                        <div class="review-card__stars">★★★★★</div>
+                        <p class="review-card__text">Заказывали брусчатку «Старый город» для загородного участка. Качество отличное, цвет ровный, без сколов. Доставили вовремя. Рекомендую!</p>
+                        <div class="review-card__author">
+                            <div class="review-card__avatar">АИ</div>
+                            <div>
+                                <p class="review-card__name">Алексей Иванов</p>
+                                <p class="review-card__date">15 февраля 2026</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-card__stars">★★★★★</div>
+                        <p class="review-card__text">Делали дорожки на даче. Плитка «Волна» легла идеально, мастера всё сделали аккуратно. Уже второй сезон — ни одной трещины!</p>
+                        <div class="review-card__author">
+                            <div class="review-card__avatar">МС</div>
+                            <div>
+                                <p class="review-card__name">Мария Смирнова</p>
+                                <p class="review-card__date">3 января 2026</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-card__stars">★★★★★</div>
+                        <p class="review-card__text">Брали бордюры и брусчатку для парковки у офиса. Всё чётко: замер, расчёт, доставка, укладка. Работают профессионально.</p>
+                        <div class="review-card__author">
+                            <div class="review-card__avatar">ДК</div>
+                            <div>
+                                <p class="review-card__name">Дмитрий Козлов</p>
+                                <p class="review-card__date">20 декабря 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reviews__controls">
+                    <button class="reviews__arrow reviews__arrow--prev" id="reviewPrev" aria-label="Предыдущий">‹</button>
+                    <button class="reviews__arrow reviews__arrow--next" id="reviewNext" aria-label="Следующий">›</button>
+                </div>
+            </div>
+
+            <!-- Форма отзыва -->
+            <div class="review-form" id="reviewForm">
+                <h3 class="review-form__title">Оставить отзыв</h3>
+                <p class="review-form__note">Ваш отзыв будет опубликован после проверки модератором</p>
+                <div class="review-form__fields">
+                    <div class="review-form__group">
+                        <input type="text" class="review-form__input" id="reviewName" placeholder="Ваше имя" maxlength="50" required>
+                    </div>
+                    <div class="review-form__group">
+                        <label class="review-form__label">Оценка</label>
+                        <div class="review-form__stars-input" id="starsInput">
+                            <span class="star-btn" data-value="1">★</span>
+                            <span class="star-btn" data-value="2">★</span>
+                            <span class="star-btn" data-value="3">★</span>
+                            <span class="star-btn" data-value="4">★</span>
+                            <span class="star-btn" data-value="5">★</span>
+                        </div>
+                    </div>
+                    <div class="review-form__group review-form__group--full">
+                        <textarea class="review-form__textarea" id="reviewText" placeholder="Расскажите о вашем опыте…" maxlength="500" required></textarea>
+                    </div>
+                    <button class="btn btn--primary review-form__btn" id="submitReview">Отправить отзыв</button>
+                </div>
+                <div class="review-form__success hidden" id="reviewSuccess">
+                    <span class="review-form__success-icon">✓</span>
+                    <p>Спасибо! Ваш отзыв отправлен на модерацию.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="section faq" id="faq">
+        <div class="container">
+            <div class="section__header">
+                <p class="section__tag">Ответы на вопросы</p>
+                <h2 class="section__title">Частые вопросы</h2>
+            </div>
+            <div class="faq__list">
+                <div class="faq__item">
+                    <button class="faq__question">
+                        <span>Какой срок службы вашей плитки?</span>
+                        <span class="faq__icon">+</span>
+                    </button>
+                    <div class="faq__answer">
+                        <p>Наша плитка рассчитана на срок службы от 25 лет и более при правильной укладке и эксплуатации. Мы используем высокомарочный бетон (М300+) и качественные красители, устойчивые к выгоранию.</p>
+                    </div>
+                </div>
+                <div class="faq__item">
+                    <button class="faq__question">
+                        <span>Какая минимальная партия заказа?</span>
+                        <span class="faq__icon">+</span>
+                    </button>
+                    <div class="faq__answer">
+                        <p>Минимальный заказ — от 10 м² для брусчатки и от 20 штук для бордюров. Для нестандартных заказов минимальная партия обсуждается индивидуально.</p>
+                    </div>
+                </div>
+                <div class="faq__item">
+                    <button class="faq__question">
+                        <span>Сколько стоит доставка?</span>
+                        <span class="faq__icon">+</span>
+                    </button>
+                    <div class="faq__answer">
+                        <p>Доставка по городу — бесплатно при заказе от 50 м². За пределы города стоимость рассчитывается индивидуально, в среднем от 50 ₽/км. Разгрузка манипулятором включена.</p>
+                    </div>
+                </div>
+                <div class="faq__item">
+                    <button class="faq__question">
+                        <span>Можно ли заказать плитку нестандартного цвета?</span>
+                        <span class="faq__icon">+</span>
+                    </button>
+                    <div class="faq__answer">
+                        <p>Да, мы изготавливаем плитку в любом цвете по каталогу RAL. Срок изготовления нестандартных цветов — от 5 рабочих дней, минимальная партия — от 30 м².</p>
+                    </div>
+                </div>
+                <div class="faq__item">
+                    <button class="faq__question">
+                        <span>Предоставляете ли вы гарантию на укладку?</span>
+                        <span class="faq__icon">+</span>
+                    </button>
+                    <div class="faq__answer">
+                        <p>Да, гарантия на работы по укладке составляет 3 года. На саму продукцию — до 25 лет. В случае обнаружения производственного брака замена производится бесплатно.</p>
+                    </div>
+                </div>
+                <div class="faq__item">
+                    <button class="faq__question">
+                        <span>Как правильно ухаживать за плиткой?</span>
+                        <span class="faq__icon">+</span>
+                    </button>
+                    <div class="faq__answer">
+                        <p>Плитка не требует особого ухода. Рекомендуем периодически промывать водой, не использовать агрессивную химию и своевременно удалять сорняки из швов. Зимой для уборки льда не используйте металлические скребки.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACTS ===== -->
+    <section class="section contacts" id="contacts">
+        <div class="container">
+            <div class="section__header">
+                <p class="section__tag">Свяжитесь с нами</p>
+                <h2 class="section__title">Контакты</h2>
+            </div>
+            <div class="contacts__inner">
+                <div class="contacts__info">
+                    <div class="contacts__item">
+                        <span class="contacts__icon">📍</span>
+                        <div>
+                            <p class="contacts__label">Адрес</p>
+                            <p class="contacts__value">г. Москва, ул. Промышленная, д. 15</p>
+                        </div>
+                    </div>
+                    <div class="contacts__item">
+                        <span class="contacts__icon">📞</span>
+                        <div>
+                            <p class="contacts__label">Телефон</p>
+                            <p class="contacts__value"><a href="tel:+74951234567">+7 (495) 123-45-67</a></p>
+                        </div>
+                    </div>
+                    <div class="contacts__item">
+                        <span class="contacts__icon">✉️</span>
+                        <div>
+                            <p class="contacts__label">Email</p>
+                            <p class="contacts__value"><a href="mailto:info@whitehorsestone.ru">info@whitehorsestone.ru</a></p>
+                        </div>
+                    </div>
+                    <div class="contacts__item">
+                        <span class="contacts__icon">🕐</span>
+                        <div>
+                            <p class="contacts__label">Режим работы</p>
+                            <p class="contacts__value">Пн–Пт: 8:00–18:00<br>Сб: 9:00–15:00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contacts__map" id="map">
+                    <iframe 
+                        src="https://www.openstreetmap.org/export/embed.html?bbox=37.5%2C55.7%2C37.7%2C55.8&layer=mapnik"
+                        width="100%" 
+                        height="100%" 
+                        style="border:0; border-radius: 16px;" 
+                        allowfullscreen 
+                        loading="lazy"
+                        title="Карта">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__col footer__col--brand">
+                    <a href="#" class="logo logo--footer">
+                        <span class="logo__icon">◆</span>
+                        <span class="logo__text">White Horse Stone</span>
+                    </a>
+                    <p class="footer__about">Производство тротуарной плитки и бордюров. Качество, проверенное временем.</p>
+                </div>
+                <div class="footer__col">
+                    <h4 class="footer__heading">Навигация</h4>
+                    <a href="#hero" class="footer__link">Главная</a>
+                    <a href="#popular" class="footer__link">Популярные товары</a>
+                    <a href="#catalog" class="footer__link">Каталог</a>
+                    <a href="#calculator" class="footer__link">Расчёт стоимости</a>
+                </div>
+                <div class="footer__col">
+                    <h4 class="footer__heading">Компания</h4>
+                    <a href="#services" class="footer__link">Услуги</a>
+                    <a href="#reviews" class="footer__link">Отзывы</a>
+                    <a href="#faq" class="footer__link">FAQ</a>
+                    <a href="#contacts" class="footer__link">Контакты</a>
+                </div>
+                <div class="footer__col">
+                    <h4 class="footer__heading">Контакты</h4>
+                    <a href="tel:+74951234567" class="footer__link">+7 (495) 123-45-67</a>
+                    <a href="mailto:info@whitehorsestone.ru" class="footer__link">info@whitehorsestone.ru</a>
+                    <p class="footer__link">Пн–Пт: 8:00–18:00</p>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2026 White Horse Stone. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

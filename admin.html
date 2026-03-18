@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Модерация отзывов — White Horse Stone</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #f8f7f4;
+            --white: #ffffff;
+            --text: #1a1a1a;
+            --text-secondary: #6b6b6b;
+            --border: #e5e3de;
+            --accent: #2c2c2c;
+            --warm: #c4a882;
+            --green: #43a047;
+            --red: #e53935;
+            --radius: 12px;
+            --font: 'Inter', sans-serif;
+        }
+
+        body {
+            font-family: var(--font);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 40px 24px;
+        }
+
+        .admin {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .admin__header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .admin__title {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .admin__back {
+            font-size: 0.9rem;
+            color: var(--warm);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .admin__back:hover { text-decoration: underline; }
+
+        .admin__tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .admin__tab {
+            padding: 10px 24px;
+            border: 2px solid var(--border);
+            border-radius: 50px;
+            background: transparent;
+            font-family: var(--font);
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: 0.3s;
+            color: var(--text-secondary);
+        }
+
+        .admin__tab.active {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: var(--white);
+        }
+
+        .admin__count {
+            background: var(--warm);
+            color: var(--white);
+            font-size: 0.72rem;
+            padding: 2px 8px;
+            border-radius: 20px;
+            margin-left: 6px;
+            font-weight: 700;
+        }
+
+        .admin__empty {
+            text-align: center;
+            padding: 60px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .review-mod {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 28px;
+            margin-bottom: 16px;
+            border: 1px solid var(--border);
+            transition: 0.3s;
+        }
+
+        .review-mod__top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+
+        .review-mod__name {
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .review-mod__date {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+        }
+
+        .review-mod__stars {
+            color: #f5a623;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .review-mod__text {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .review-mod__actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-mod {
+            padding: 8px 20px;
+            border: none;
+            border-radius: 8px;
+            font-family: var(--font);
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-mod--approve {
+            background: var(--green);
+            color: var(--white);
+        }
+        .btn-mod--approve:hover { opacity: 0.85; }
+
+        .btn-mod--reject {
+            background: var(--red);
+            color: var(--white);
+        }
+        .btn-mod--reject:hover { opacity: 0.85; }
+
+        .btn-mod--delete {
+            background: transparent;
+            color: var(--red);
+            border: 1px solid var(--red);
+        }
+        .btn-mod--delete:hover { background: var(--red); color: var(--white); }
+
+        @keyframes fadeOut {
+            to { opacity: 0; transform: translateX(30px); height: 0; padding: 0; margin: 0; overflow: hidden; }
+        }
+
+        .review-mod--removing {
+            animation: fadeOut 0.4s ease forwards;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="admin">
+        <div class="admin__header">
+            <h1 class="admin__title">Модерация отзывов</h1>
+            <a href="index.html" class="admin__back">← Вернуться на сайт</a>
+        </div>
+
+        <div class="admin__tabs">
+            <button class="admin__tab active" data-view="pending">
+                На модерации <span class="admin__count" id="pendingCount">0</span>
+            </button>
+            <button class="admin__tab" data-view="approved">
+                Одобренные <span class="admin__count" id="approvedCount">0</span>
+            </button>
+        </div>
+
+        <div id="pendingList"></div>
+        <div id="approvedList" style="display:none"></div>
+    </div>
+
+    <script>
+        const pendingList = document.getElementById('pendingList');
+        const approvedList = document.getElementById('approvedList');
+        const pendingCount = document.getElementById('pendingCount');
+        const approvedCount = document.getElementById('approvedCount');
+        const tabs = document.querySelectorAll('.admin__tab');
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function getPending() {
+            return JSON.parse(localStorage.getItem('whs_pending_reviews') || '[]');
+        }
+
+        function getApproved() {
+            return JSON.parse(localStorage.getItem('whs_approved_reviews') || '[]');
+        }
+
+        function savePending(data) {
+            localStorage.setItem('whs_pending_reviews', JSON.stringify(data));
+        }
+
+        function saveApproved(data) {
+            localStorage.setItem('whs_approved_reviews', JSON.stringify(data));
+        }
+
+        function renderStars(n) {
+            return '★'.repeat(n) + '☆'.repeat(5 - n);
+        }
+
+        function render() {
+            const pending = getPending();
+            const approved = getApproved();
+
+            pendingCount.textContent = pending.length;
+            approvedCount.textContent = approved.length;
+
+            if (pending.length === 0) {
+                pendingList.innerHTML = '<div class="admin__empty">Нет отзывов на модерации</div>';
+            } else {
+                pendingList.innerHTML = pending.map(r => `
+                    <div class="review-mod" data-id="${r.id}">
+                        <div class="review-mod__top">
+                            <span class="review-mod__name">${escapeHtml(r.name)}</span>
+                            <span class="review-mod__date">${escapeHtml(r.date)}</span>
+                        </div>
+                        <div class="review-mod__stars">${renderStars(r.rating)}</div>
+                        <p class="review-mod__text">${escapeHtml(r.text)}</p>
+                        <div class="review-mod__actions">
+                            <button class="btn-mod btn-mod--approve" onclick="approve(${r.id})">Одобрить</button>
+                            <button class="btn-mod btn-mod--reject" onclick="reject(${r.id})">Отклонить</button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            if (approved.length === 0) {
+                approvedList.innerHTML = '<div class="admin__empty">Нет одобренных отзывов</div>';
+            } else {
+                approvedList.innerHTML = approved.map(r => `
+                    <div class="review-mod" data-id="${r.id}">
+                        <div class="review-mod__top">
+                            <span class="review-mod__name">${escapeHtml(r.name)}</span>
+                            <span class="review-mod__date">${escapeHtml(r.date)}</span>
+                        </div>
+                        <div class="review-mod__stars">${renderStars(r.rating)}</div>
+                        <p class="review-mod__text">${escapeHtml(r.text)}</p>
+                        <div class="review-mod__actions">
+                            <button class="btn-mod btn-mod--delete" onclick="removeApproved(${r.id})">Удалить</button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+
+        function animateAndRemove(id, callback) {
+            const el = document.querySelector(`.review-mod[data-id="${id}"]`);
+            if (el) {
+                el.classList.add('review-mod--removing');
+                setTimeout(callback, 400);
+            } else {
+                callback();
+            }
+        }
+
+        window.approve = function(id) {
+            animateAndRemove(id, () => {
+                const pending = getPending();
+                const idx = pending.findIndex(r => r.id === id);
+                if (idx === -1) return;
+
+                const review = pending.splice(idx, 1)[0];
+                review.approved = true;
+                savePending(pending);
+
+                const approved = getApproved();
+                approved.push(review);
+                saveApproved(approved);
+
+                render();
+            });
+        };
+
+        window.reject = function(id) {
+            animateAndRemove(id, () => {
+                const pending = getPending();
+                savePending(pending.filter(r => r.id !== id));
+                render();
+            });
+        };
+
+        window.removeApproved = function(id) {
+            if (!confirm('Удалить этот отзыв?')) return;
+            animateAndRemove(id, () => {
+                const approved = getApproved();
+                saveApproved(approved.filter(r => r.id !== id));
+                render();
+            });
+        };
+
+        // Tabs
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                const view = tab.dataset.view;
+                pendingList.style.display = view === 'pending' ? '' : 'none';
+                approvedList.style.display = view === 'approved' ? '' : 'none';
+            });
+        });
+
+        render();
+    </script>
+</body>
+</html>
